@@ -3,9 +3,11 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import authenticated from './reducers/authenticated';
+import books from './reducers/reducer_books';
 
 const reducers = { 
-    authenticated
+    authenticated,
+    books
   };
 
 const store = createStore(

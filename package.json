@@ -102,7 +102,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "dist": "NODE_ENV=production webpack --progress",
+    "dist": "SET NODE_ENV=production&&webpack --progress",
     "test": "npm run-script lint",
     "webpack-watch": "webpack --watch",
     "serve": "webpack-dev-server",

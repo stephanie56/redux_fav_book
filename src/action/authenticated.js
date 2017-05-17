@@ -47,12 +47,12 @@ export function authenticateUser() {
   return (dispatch) => {
     dispatch(userIsLoading(true));
     // Set service to login
-    hello('service-name-goes-here').login(
+    hello('facebook').login(
       // Set scope permission
       //{ scope: 'repo,user' }
     ).then(function(){
       // Fetch user information
-      return hello('service-name-goes-here').api('me');
+      return hello('facebook').api('me');
     })
    .then((items) => {
       if (!items) {
@@ -69,7 +69,7 @@ export function authenticateUser() {
 export function logoutUser(){
     return (dispatch) => {
         dispatch(userIsLoading(true));
-        hello('service-name-goes-here').logout()
+        hello('facebook').logout()
         .then(function(e){
             dispatch(userIsLoading(false));
             dispatch(userIsAuthenticated(false));
@@ -81,13 +81,13 @@ export function logoutUser(){
 export function fetchUserSession() {
     return (dispatch) => {
         dispatch(userIsLoading(true));
-        let service = hello('service-name-goes-here').getAuthResponse();
+        let service = hello('facebook').getAuthResponse();
         if (!service) {
             dispatch(userIsAuthenticated(false));
             dispatch(userIsLoading(false));
             return;
         }
-        hello('service-name-goes-here').api('me')
+        hello('fackbook').api('me')
         .then((items) => {
             dispatch(userIsLoading(false));
             dispatch(userIsAuthenticated(true));

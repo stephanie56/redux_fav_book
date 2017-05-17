@@ -19,7 +19,7 @@ class Login extends Component {
 
   render() {
     return (
-        <FlatButton 
+        <FlatButton
         {...this.props}
         label="Login" />
     );
@@ -40,7 +40,7 @@ class MainBar extends Component {
 
   render() {
     let self = this;
-    
+
     // Login user
     this.userLogIn = () => {
       this.props.authUser();
@@ -56,7 +56,7 @@ class MainBar extends Component {
       <div>
         <AppBar
         title="App"
-        iconElementRight={this.props.logged ?   
+        iconElementRight={this.props.logged ?
           <IconMenu
             iconButtonElement={
               <IconButton
@@ -72,7 +72,7 @@ class MainBar extends Component {
             <MenuItem primaryText="Profile"  onClick={() => browserHistory.push('/Profile')} />
             <MenuItem primaryText="Help" />
             <MenuItem primaryText="Sign out" onClick={this.destroySession}/>
-          </IconMenu> : 
+          </IconMenu> :
         <Login onClick={this.userLogIn}  />}
         />
       </div>

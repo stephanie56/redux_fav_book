@@ -2,25 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router'
 import { StyleSheet, css } from 'aphrodite';
-import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-import Dialog from 'material-ui/Dialog';
-import Divider from 'material-ui/Divider';
-
-const style = StyleSheet.create({
-  //Styles go here
-});
+import {GridList, GridTile} from 'material-ui/GridList';
+import IconButton from 'material-ui/IconButton';
+import Subheader from 'material-ui/Subheader';
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import Booklist from './Booklist';
+import BookDetails from './BookDetails';
 
 class Dashboard extends Component {
     render(){
       return(
-        <div>
-          <div>
-              <div>
-                <h1>Main content goes here </h1>
-              </div>
-        </div>
-      </div>)
+      <div>
+        <Booklist />
+        <BookDetails />
+      </div>
+      );
     }
 }
 

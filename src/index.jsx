@@ -15,7 +15,7 @@ import App from './App';
 // https://adodson.com/hello.js/
 // Passing clientID and scope permissions
 hello.init({
-  facebook: 'FACEBOOK_CLIENT_ID',
+  facebook: '1793178854345483',
   windows: 'WINDOWS_CLIENT_ID',
   google: 'GOOGLE_CLIENT_ID'
 }, {redirect_uri: 'redirect.html'});
