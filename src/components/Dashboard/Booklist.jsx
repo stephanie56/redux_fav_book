@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { selectbook } from '../../action/booklist';
+import { bindActionCreators } from 'redux';
 import { browserHistory } from 'react-router'
 import { StyleSheet, css } from 'aphrodite';
 import {GridList, GridTile} from 'material-ui/GridList';
@@ -27,6 +29,7 @@ class Booklist extends Component {
           <GridTile
                 key={book.img}
                 title={book.title}
+                onClick={() => this.props.selectbook(book)}
                 subtitle={<span>by <b>{book.author}</b></span>}
                 actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
                 >
@@ -57,4 +60,8 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Booklist);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ selectbook }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Booklist);
