@@ -1,7 +1,9 @@
 export function selectbook (book) {
-  type:'SELECTED_BOOK',
-  payload:book
-};
+  return {
+    type:'SELECTED_BOOK',
+    payload:book
+  };
+}
 
 
 // /* Action Creators */

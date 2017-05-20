@@ -7,53 +7,22 @@ import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
-const styles = {
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-  },
-  gridList: {
-    width: 500,
-    height: 450,
-    overflowY: 'auto',
-  },
-};
-
 class Booklist extends Component {
-    renderList(){
-      return this.props.books.map((book) => {
-        return(
-          <GridTile
-                key={book.img}
-                title={book.title}
-                subtitle={<span>by <b>{book.author}</b></span>}
-                actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-                >
-                <img src={book.img} />
-          </GridTile>
-        );
-      });
-    }
-
-    render(){
-      return(
-        <div style={styles.root}>
-          <GridList
-            cellHeight={180}
-            style={styles.gridList}
-          >
-            <Subheader>My Current Booklist</Subheader>
-            {this.renderList()}
-          </GridList>
-        </div>
-      );
-    }
+  render(){
+    console.log(this.props)
+    return(
+      <div className="">
+        <h3>Book details go here:</h3>
+        {this.props.activebook ? <div>{this.props.activebook.title}</div> : 'you have not selected a book'}
+      </div>
+    );
+  }
 }
+
 
 function mapStateToProps(state) {
   return {
-    books: state.books
+    activebook: state.activebook
   }
 }
 

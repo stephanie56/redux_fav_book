@@ -4,9 +4,11 @@ import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import authenticated from './reducers/authenticated';
 import books from './reducers/reducer_books';
+import activebook from './reducers/reducer_activebook';
 
-const reducers = { 
+const reducers = {
     authenticated,
+    activebook,
     books
   };
 
