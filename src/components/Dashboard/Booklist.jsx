@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { selectbook } from '../../action/booklist';
+import { selectbook, likebook } from '../../action/booklist';
 import { bindActionCreators } from 'redux';
 import { browserHistory } from 'react-router'
 import { StyleSheet, css } from 'aphrodite';
@@ -33,7 +33,7 @@ class Booklist extends Component {
                 subtitle={<span>by <b>{book.author}</b></span>}
                 actionIcon={
                   <IconButton
-                    onClick={() => this.props.selectbook(book)}
+                    onClick={() => this.props.likebook(book)}
                   ><StarBorder color="white" /></IconButton>}
                 >
                 <img src={book.img} />
@@ -64,7 +64,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectbook }, dispatch);
+  return bindActionCreators({ selectbook, likebook }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Booklist);

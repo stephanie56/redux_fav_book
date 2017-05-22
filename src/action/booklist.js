@@ -5,10 +5,10 @@ export function selectbook (book) {
   };
 }
 
-export function likebook (bool) {
+export function likebook (book) {
   return {
     type: 'LIKE_BOOK',
-    payload:bool
+    payload: book
   };
 }
 
