@@ -5,6 +5,13 @@ export function selectbook (book) {
   };
 }
 
+export function likebook (bool) {
+  return {
+    type: 'LIKE_BOOK',
+    payload:bool
+  };
+}
+
 
 // /* Action Creators */
 // export function booklist() {

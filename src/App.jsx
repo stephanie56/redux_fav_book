@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Container from './components/Container/Container';
 import MainBar from './components/MainBar/MainBar';
 import Profile from './components/Profile/Profile';
+import Redirect from './components/Redirect/Redirect';
 
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store);
@@ -33,7 +34,8 @@ const App = () => (
       <Router history={history}>
         <Route path="/" component={Container}>
           <IndexRoute component={Dashboard}/>
-          <Route path="profile" component={Profile} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/redirect" component={Redirect} />
         </Route>
     </Router>
     </app>

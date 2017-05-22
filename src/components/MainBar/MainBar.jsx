@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import { connect } from 'react-redux';
-import { browserHistory } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import { authenticateUser, logoutUser, fetchUserSession } from '../../action/authenticated';
 
 import IconButton from 'material-ui/IconButton';
@@ -19,9 +19,9 @@ class Login extends Component {
 
   render() {
     return (
-        <FlatButton
-        {...this.props}
-        label="Login" />
+      <FlatButton
+      {...this.props}
+      label="Login" />
     );
   }
 }

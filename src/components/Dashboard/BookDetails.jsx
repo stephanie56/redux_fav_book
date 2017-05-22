@@ -7,13 +7,31 @@ import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
+const styles = {
+  container: {
+    justifyContent: 'space-around',
+    marginTop: '50px',
+    paddingTop: '40px',
+    backgroundColor: '#eee',
+    minHeight: '500px',
+    fontSize: '1.2em',
+    textAlign: 'center'
+  }
+};
+
 class Booklist extends Component {
   render(){
-    console.log(this.props)
+    if(!this.props.activebook){
+      return (
+        <div style={styles.container}>
+          <h3>You have not selected a book.</h3>
+        </div>
+      );
+    }
     return(
-      <div className="">
-        <h3>Book details go here:</h3>
-        {this.props.activebook ? <div>{this.props.activebook.title}</div> : 'you have not selected a book'}
+      <div style={styles.container}>
+        <h3>Book Details:</h3>
+        {this.props.activebook.title}
       </div>
     );
   }

@@ -18,7 +18,7 @@ hello.init({
   facebook: '1793178854345483',
   windows: 'WINDOWS_CLIENT_ID',
   google: 'GOOGLE_CLIENT_ID'
-}, {redirect_uri: 'redirect.html'});
+}, {redirect_uri: '/redirect'});
 
 const Root = () => (
   <MuiThemeProvider>

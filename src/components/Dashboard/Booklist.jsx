@@ -31,7 +31,10 @@ class Booklist extends Component {
                 title={book.title}
                 onClick={() => this.props.selectbook(book)}
                 subtitle={<span>by <b>{book.author}</b></span>}
-                actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+                actionIcon={
+                  <IconButton
+                    onClick={() => this.props.selectbook(book)}
+                  ><StarBorder color="white" /></IconButton>}
                 >
                 <img src={book.img} />
           </GridTile>
